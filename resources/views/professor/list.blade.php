@@ -48,7 +48,7 @@
         <tbody>
             @foreach ($professors as $professor)
                 <tr>
-                    <td><img src="{{ asset(env('RUTA_FOTOS') . '/' . $professor->foto) }}" width="100"></td>
+                    <td><img src="{{ asset(env('RUTA_FOTOS') . '/' . $professor->foto) }}" width="120"></td>
                     <td>{{$professor->cognoms}}, {{$professor->nom }}</td><td>{{ $professor->email }}</td>
                     <td>
                         @auth<a href="{{ route('professor_edit', ['id' => $professor->id]) }}"  class="btn btn-dark mb-3 mx-3">Editar</a>@endauth
