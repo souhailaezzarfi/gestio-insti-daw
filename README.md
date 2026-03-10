@@ -1,59 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projecte de Síntesi – Desplegament d’Aplicacions Web (DAW)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Status](https://img.shields.io/badge/status-actiu-success)]()
+[![Module](https://img.shields.io/badge/module-Desplegament%20d'Aplicacions%20Web-blue)]()
+[![Level](https://img.shields.io/badge/level-2n%20DAW-orange)]()
+[![Optional](https://img.shields.io/badge/CI/CD-opcional-lightgrey)]()
 
-## About Laravel
+Repositori oficial del Projecte de Síntesi del mòdul de Desplegament d’Aplicacions Web.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aquest projecte simula un escenari professional real:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> Rebre una aplicació funcional i convertir-la en un projecte professional, versionat correctament i desplegable.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Objectius
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+L’alumnat haurà de demostrar que sap:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Aplicar un workflow real amb Git (branques, merges, etiquetes).
+- Provocar i resoldre conflictes de manera argumentada.
+- Dockeritzar una aplicació web.
+- Gestionar correctament configuració i variables d’entorn.
+- Documentar decisions tècniques.
+- Garantir una execució reproduïble.
 
-## Laravel Sponsors
+Ampliació opcional:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Integració Contínua (CI) amb GitHub Actions.
+- Desplegament al núvol (CD bàsic).
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Roadmap del projecte
 
-## Contributing
+### Fase 1 – Professionalització del repositori
+- Estructura correcta.
+- `.gitignore` adequat.
+- Workflow amb branques.
+- Resolució de conflictes documentada.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Fase 2 – Dockerització
+- Dockerfile funcional.
+- docker-compose operatiu.
+- Variables d’entorn separades del codi.
+- Execució amb `docker compose up --build`.
 
-## Code of Conduct
+### Fase 3 – Documentació
+- README clar.
+- REPORT reflexiu.
+- Evidències reals.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Fase 4 (Opcional) – CI/CD
+- Workflow amb GitHub Actions.
+- Validació automàtica del build.
+- Desplegament al núvol.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Estructura del repositori
 
-## License
+- [`enunciat-projecte-sintesi.md`](./enunciat-projecte-sintesi.md) → Enunciat oficial del projecte.
+- [`REPORT.md`](./REPORT.md) → Estructura bàsica del document REPORT.
+- [`annex-gestio-secrets.md`](./annex-gestio-secrets.md) → Gestió de secrets en entorns professionals.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Modalitat
+
+- Treball en parelles.
+- Temps orientatiu: 12 hores 
+- Lliurament: 
+  - Repositori Git.
+  - Defensa Oral
+  - Documentació
+  
+
+---
+
+## Filosofia
+
+Aquest projecte no avalua si l’aplicació funciona.
+
+Avalua si el projecte és:
+
+- Col·laboratiu.
+- Reproduïble.
+- Configurat correctament.
+- Documentat.
+- Professional.
+
+> **"It works on my machine"**  
+> és desenvolupament.
+>
+> **"It is ready to deploy"**  
+> és enginyeria.
+
+---
+
+## Nota sobre credencials
+
+Les credencials utilitzades en aquest projecte són d’entorn local i no tenen valor real.
+
+En entorns professionals:
+- Els secrets no es versionen.
+- Es gestionen mitjançant variables d’entorn o sistemes de gestió de secrets.
