@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: gestio_insti
+      DB_USERNAME: laravel
+      DB_PASSWORD: laravel
+    depends_on:
+      - db
+    volumes:
+      - ./storage:/var/www/storage
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: gestio_insti
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db_data:
