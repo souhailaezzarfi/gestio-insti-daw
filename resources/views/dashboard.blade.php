@@ -5,7 +5,7 @@
 @section('content')
 
 
-<h1>Bienvengut!</h1>
+<h1>Benvengut!</h1>
 
 
 @endsection
