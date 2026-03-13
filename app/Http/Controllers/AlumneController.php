@@ -48,10 +48,6 @@ class AlumneController extends Controller
 
     function new(Request $request) 
     {
-
-    if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
         
       if ($request->isMethod('post')) {   
         // recollim els camps del formulari en un objecte alumne
@@ -140,9 +136,7 @@ class AlumneController extends Controller
 
      function edit(Request $request, $id) 
     {
-         if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
+      
       if ($request->isMethod('post')) {   
         // recollim els camps del formulari en un objecte alumne
 
@@ -236,9 +230,7 @@ class AlumneController extends Controller
     function delete($id) 
     { 
 
-     if (auth()->user()->rol !== 'admin') {
-       abort(403); 
-       }
+    
       $alumne = Alumne::find($id);
       $alumne->delete();
 

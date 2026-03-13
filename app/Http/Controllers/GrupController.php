@@ -14,73 +14,82 @@ use App\Models\Grup;
 
 class GrupController extends Controller
 {
-   use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+  use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function list() 
-    { 
-      $grups = Grup::all();
+  function list()
+  {
+    $grups = Grup::all();
 
-      return view('grup.list', ['grups' => $grups ]);
-    }
+    return view('grup.list', ['grups' => $grups]);
+  }
 
-    public function new(Request $request)
-{
-   if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
+  public function new(Request $request)
+  {
+
     // Si venimos del formulario (POST)
     if ($request->isMethod('post')) {
 
-        $grup = new Grup;
-        $grup->nom = $request->nom;
-        $grup->aula = $request->aula;
-        $grup->professor_id = $request->professor_id;  
-        $grup->save();
+      $request->validate([
+        'nom' => 'required',
+        'aula' => 'required',
+        'professor_id' => 'required|unique:grups,professor_id'
+      ], [
+        'professor_id.unique' => 'Aquest professor ja és tutor d’un altre grup.'
+      ]);
 
-        return redirect()->route('grup_list') ->with('status', 'Nou grup '.$grup->nom.' creat!');
+
+      $grup = new Grup;
+      $grup->nom = $request->nom;
+      $grup->aula = $request->aula;
+      $grup->professor_id = $request->professor_id;
+      $grup->save();
+
+      return redirect()->route('grup_list')->with('status', 'Nou grup ' . $grup->nom . ' creat!');
     }
 
-     // si no venim de fer submit al formulari, hem de mostrar el formulari
+    // si no venim de fer submit al formulari, hem de mostrar el formulari
     $professors = Professor::all();
 
     return view('grup.new', ['professors' => $professors]);
-}
+  }
 
- function edit ($id, Request $request){
-   if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
-      if ($request->isMethod('post')) {    
-        
+  function edit($id, Request $request)
+  {
 
-        $grup = Grup::find($id);
-        $grup->nom = $request->nom;
-        $grup->aula = $request->aula;
-        $grup->professor_id = $request->professor_id;
-        $grup->save();
+    if ($request->isMethod('post')) {
 
-        return redirect()->route('grup_list')->with('status', 'Grup '.$grup->nom.' editat!');      }
-        
-        $grup = Grup::find($id);
-        $professors = Professor::all();
-
-        return view('grup.edit', ['grup' => $grup, 'professors' => $professors]);    
+      $request->validate([
+        'nom' => 'required',
+        'aula' => 'required',
+        'professor_id' => 'required|unique:grups,professor_id,' . $id
+      ], [
+        'professor_id.unique' => 'Aquest professor ja és tutor d’un altre grup.'
+      ]);
 
 
-    }
 
-    function delete($id) 
-    { 
-
-     if (auth()->user()->rol !== 'admin') {
-       abort(403); 
-       }
       $grup = Grup::find($id);
-      $grup->delete();
+      $grup->nom = $request->nom;
+      $grup->aula = $request->aula;
+      $grup->professor_id = $request->professor_id;
+      $grup->save();
 
-      return redirect()->route('grup_list')->with('status', 'Grup '.$grup->nom.' eliminat!');
+      return redirect()->route('grup_list')->with('status', 'Grup ' . $grup->nom . ' editat!');
     }
 
+    $grup = Grup::find($id);
+    $professors = Professor::all();
+
+    return view('grup.edit', ['grup' => $grup, 'professors' => $professors]);
+  }
+
+  function delete($id)
+  {
 
 
+    $grup = Grup::find($id);
+    $grup->delete();
+
+    return redirect()->route('grup_list')->with('status', 'Grup ' . $grup->nom . ' eliminat!');
+  }
 }
