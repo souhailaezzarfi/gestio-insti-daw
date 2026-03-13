@@ -36,4 +36,4 @@ RUN chmod -R 775 storage bootstrap/cache
 #Abre el puerto 8000 y arranca el servidor de Laravel
 EXPOSE 8000
 
-CMD php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=8000
+CMD bash -c "until php artisan migrate --force 2>/dev/null; do echo 'Waiting for database...'; sleep 3; done && php artisan serve --host=0.0.0.0 --port=8000"
