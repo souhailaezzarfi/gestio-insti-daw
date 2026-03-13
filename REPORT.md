@@ -113,7 +113,14 @@ Incloeu errors reals i com s’han resolt.
 - Accedir a l’aplicació  
 
 Indiqueu també:
-- Ports utilitzats
+- Ports utilitzats 
+```
+Els ports principals utilitzats per l’aplicació són:
+
+8000 → servidor web de l’aplicació (Laravel / Nginx)
+
+3306 → base de dades MySQL (si s’exposa externament)
+```
 - Credencials de prova (si n’hi ha)
 
 ## 8. Repartiment de tasques
@@ -123,14 +130,29 @@ Descriviu què ha fet cada membre de l’equip.
 ## 9. Temps invertit
 
 Indiqueu aproximadament:
-- Temps dedicat a Git
-- Temps dedicat a Docker
-- Temps dedicat a documentació
+- Temps dedicat a Git: aproximadament entre unes 5 i 6 hores.
+- Temps dedicat a Docker:
+- Temps dedicat a documentació:
 
 ## 10. Reflexió final
 
 Responeu breument:
 
 - Quina ha estat la part més complexa?
+```
+Git, perquè a mi (Ricard), no hem sortia el mateix que a la companya Souhaila, i ens va tenir més temps entretinguts que tot anés bé, i la meva branca de treball estigués bé.
+```
 - Què faríeu diferent en un projecte real?
+```
+En un projecte real, el grup aplicaria una planificació encara més estricta des del principi. Tot i que en aquest projecte s’han utilitzat branques, merges i resolució de conflictes, s’ha vist que moltes incidències apareixen quan no es coordinen prou bé els canvis que fa cada membre.
+```
 - Heu entès realment com funcionen els conflictes i Docker?
+```
+Pel que fa als conflictes de Git, hem aprés, i considerem que sí que s’ha entès el seu funcionament de manera pràctica. Abans de fer aquest projecte, els conflictes es veien com un error difícil d’interpretar, però després de provocar-los i resoldre’ls manualment s’ha entès millor per què es produeixen, com identificar els marcadors de conflicte i com decidir quina versió del codi s’ha de mantenir.
+
+Especialment, s’ha après que Git no “s’equivoca”, sinó que simplement no pot decidir automàticament quan dues branques modifiquen la mateixa part d’un fitxer o quan hi ha canvis incompatibles en fitxers com composer.json. Aquesta part ha estat útil perquè s’ha treballat sobre casos reals del projecte.
+
+Pel que fa a Docker, el grup també considera que s’ha entès millor la seva utilitat dins del desplegament d’una aplicació. En aquest cas, la part principal de dockerització ha estat treballada sobretot per una de les integrants del grup, però el procés global ha servit per entendre millor com es defineixen els serveis, com es configuren els contenidors i com es pot executar el projecte d’una manera més reproduïble en diferents equips.
+
+Per tant, la conclusió del grup és que sí, hem assolit una comprensió més real, tant dels conflictes de Git com del paper a fer Docker en un projecte professional, tot i que encara hi ha marge de millora i més pràctica per consolidar alguns conceptes més.
+```

@@ -63,6 +63,28 @@ Ampliació opcional:
 - [`REPORT.md`](./REPORT.md) → Estructura bàsica del document REPORT.
 - [`annex-gestio-secrets.md`](./annex-gestio-secrets.md) → Gestió de secrets en entorns professionals.
 
+## Execució del projecte
+
+Per executar el projecte en un entorn nou:
+
+### 1. Clonar el repositori
+```
+git clone https://github.com/souhailaezzarfi/gestio-insti-daw.git  
+cd gestio-insti-daw
+```
+### 2. Crear el fitxer .env
+
+cp .env.example .env
+
+### 3. Executar amb Docker
+
+docker compose up --build
+
+### 4. Accedir a l'aplicació
+
+http://localhost:8000
+
+
 ---
 
 ## Modalitat
