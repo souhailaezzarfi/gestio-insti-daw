@@ -4,7 +4,7 @@
 
 Nom del projecte: gestio-insti-daw
 
-Integrants: Souhaila Ezzarfi , Ricard 
+Integrants: Souhaila Ezzarfi , Ricard Vergés 
 
 Tecnologia principal (Laravel / React / Fullstack): Laravel
 
@@ -132,7 +132,7 @@ Descriviu què ha fet cada membre de l’equip.
 Indiqueu aproximadament:
 - Temps dedicat a Git: aproximadament entre unes 5 i 6 hores.
 - Temps dedicat a Docker:
-- Temps dedicat a documentació:
+- Temps dedicat a documentació: 
 
 ## 10. Reflexió final
 

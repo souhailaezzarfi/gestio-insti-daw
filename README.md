@@ -68,7 +68,9 @@ Ampliació opcional:
 Per executar el projecte en un entorn nou:
 
 ### 1. Clonar el repositori
-```
+```bash
+git clone https://github.com/souhailaezzarfi/gestio-insti-daw.git
+cd gestio-insti-daw
 git clone https://github.com/souhailaezzarfi/gestio-insti-daw.git  
 cd gestio-insti-daw
 ```
