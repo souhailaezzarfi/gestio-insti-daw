@@ -51,7 +51,7 @@
     <tbody>
         @foreach ($professors as $professor)
         <tr>
-            <td><img src="{{ asset(env('RUTA_FOTOS') . '/' . $professor->foto) }}" width="120"></td>
+            <td><img src="{{ asset(env('RUTA_FOTOS') . '/' . $professor->foto) }}" width="130"></td>
             <td>{{$professor->cognoms}}, {{$professor->nom }}</td>
             <td>{{ $professor->email }}</td>
             <td>
