@@ -4,7 +4,7 @@
 
 Nom del projecte: gestio-insti-daw
 
-Integrants: Souhaila Ezzarfi , Ricard
+Integrants: Souhaila Ezzarfi , Ricard Vergés
 
 Tecnologia principal (Laravel / React / Fullstack): Laravel
 
@@ -76,9 +76,23 @@ No hem utilitzat rebase durant el projecte.
 
 Expliqueu exactament quins canvis ha fet cada membre.
 
+Aquest conflicte es va provocar quan els dos membres de l’equip vam modificar la mateixa línia del fitxer README.md des de branques diferents.
+
+Souhaila estava treballant a la branca feature/dockerizacion afegint informació relacionada amb la dockerització del projecte, mentre que Ricard estava treballant a la branca fix/documentation modificant parts de la documentació del repositori.
+
+Quan es va intentar fusionar una de les branques amb main, Git va detectar que els dos canvis afectaven la mateixa zona del fitxer i no podia decidir automàticament quina versió conservar.
+
 ### 4.2 Missatge d’error generat
 
 Incloeu la sortida real de Git.
+
+En intentar fer el merge, Git va mostrar un missatge indicant que hi havia un conflicte en el fitxer modificat:
+
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+Aquest missatge indica que Git no ha pogut fusionar els canvis automàticament i que és necessari resoldre el conflicte manualment.
 
 ### 4.3 Marcadors de conflicte
 
@@ -94,13 +108,24 @@ Mostreu el fragment amb:
 
 Expliqueu:
 
-- Quina decisió s’ha pres
-- Per què s’ha escollit aquesta opció
-- Com s’ha validat que funciona
+- Quina decisió s’ha pres:
+
+Es va revisar manualment el fitxer README.md i es va decidir mantenir el contingut que tenia sentit per a la documentació final del projecte, integrant els canvis que no eren incompatibles.
+
+- Per què s’ha escollit aquesta opció:
+
+Aquesta opció permet conservar la informació important de les dues branques sense perdre contingut rellevant del projecte.
+
+- Com s’ha validat que funciona:
+
+Després d’eliminar els marcadors de conflicte i deixar el contingut correcte, es va marcar el fitxer com resolt amb git add, es va completar el merge amb git commit i es va comprovar a GitHub que el conflicte havia desaparegut.
+
 
 ### 4.5 Reflexió
 
 Què heu après d’aquest conflicte?
+
+Aquest conflicte ens ha ajudat a entendre millor com Git detecta canvis incompatibles en un mateix fitxer i com es poden resoldre manualment. També hem après a identificar els marcadors de conflicte i a completar correctament el procés de resolució abans de finalitzar el merge.
 
 ## 5. Conflicte 2 – Dependències o estructura
 
@@ -336,6 +361,12 @@ http://localhost:8000
 
 Descriviu què ha fet cada membre de l’equip.
 
+Durant el projecte hem dividit les tasques segons els àmbits principals del treball.
+
+Souhaila Ezzarfi s’ha encarregat principalment de la dockerització de l’aplicació, incloent la creació del Dockerfile, la configuració de docker-compose.yml, la gestió de la base de dades i la resolució de problemes relacionats amb dependències i versions de PHP.
+
+Ricard s’ha encarregat de la part de documentació del projecte, incloent la redacció i actualització del README.md i del REPORT.md, així com la gestió del workflow de Git, la creació de branques i la resolució dels conflictes de merge durant el desenvolupament.
+
 ## 9. Temps invertit
 
 Indiqueu aproximadament:
@@ -349,5 +380,13 @@ Indiqueu aproximadament:
 Responeu breument:
 
 - Quina ha estat la part més complexa?
+
+La part més complexa ha estat la resolució de conflictes amb Git i la configuració inicial de Docker, especialment quan hi havia canvis simultanis en diferents branques o problemes de compatibilitat entre dependències.
+
 - Què faríeu diferent en un projecte real?
+
+En un projecte real intentaríem coordinar millor els canvis entre branques per reduir conflictes i establir des del principi una estructura clara del projecte i del repositori.
+
 - Heu entès realment com funcionen els conflictes i Docker?
+
+En un projecte real intentaríem coordinar millor els canvis entre branques per reduir conflictes i establir des del principi una estructura clara del projecte i del repositori.
