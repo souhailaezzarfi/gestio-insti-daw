@@ -9,7 +9,7 @@
 @section('content')
 <h1>Mòduls</h1>
 <div class="text-end mb-3">
-   <a href="{{ route('modul_new') }}" class="btn btn-primary">Nou mòdul</a>
+    <a href="{{ route('modul_new') }}" class="btn btn-primary">Nou mòdul</a>
 </div>
 
 @if (session('status'))
@@ -50,7 +50,14 @@
 
             <td>{{$modul->nom }}</td>
             <td>{{ $modul->hores }}</td>
-            <td> {{ $modul->professor->cognoms }},{{ $modul->professor->nom }}</td>
+            <td>
+                @if ($modul->professor)
+                {{ $modul->professor->cognoms }}, {{ $modul->professor->nom }}
+                @else
+                <span class="text-danger">Sense professor</span>
+                @endif
+            </td>
+
             <td>
                 <a href="{{ route('modul_edit', ['id' => $modul->id]) }}" class="btn btn-dark mb-3 mx-3">Editar</a>
 
@@ -59,7 +66,7 @@
 
             </td>
         </tr>
-                @endforeach
+        @endforeach
     </tbody>
 </table>
 
