@@ -120,6 +120,8 @@ des de la seva pròpia branca:
 En obrir el Pull Request #4 a GitHub per fusionar `feature/dockerizacion`
 a `main`, GitHub va detectar el conflicte i va mostrar:
 
+![alt text](img/captura1.png)
+
 ### 5.3 Resolució aplicada
 
 Vam decidir mantenir les dues dependències al `composer.json` final
