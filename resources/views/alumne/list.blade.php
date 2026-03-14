@@ -69,19 +69,26 @@
             <td>{{$alumne->email }}</td>
             <td>{{ $alumne->data_naixement }}</td>
             <td>{{ $alumne->telefon }}</td>
-            <td>{{ $alumne->grup->nom }}</td>
-            <td>@foreach ($alumne->moduls as $modul)
-                {{ $modul->nom }}({{$modul->pivot->nota}}) <br>
-                @endforeach
-            </td>
+            <<td>
+                @if ($alumne->grup)
+                {{ $alumne->grup->nom }}
+                @else
+                <span class="text-danger">Sense grup</span>
+                @endif
+                </td>
+
+                <td>@foreach ($alumne->moduls as $modul)
+                    {{ $modul->nom }}({{$modul->pivot->nota}}) <br>
+                    @endforeach
+                </td>
 
 
-            <td>
-                <a href="{{ route('alumne_edit', ['id' => $alumne->id]) }}" class="btn btn-dark mb-3 mx-3">Editar</a>
+                <td>
+                    <a href="{{ route('alumne_edit', ['id' => $alumne->id]) }}" class="btn btn-dark mb-3 mx-3">Editar</a>
 
-                <a href="{{ route('alumne_delete', ['id' => $alumne->id]) }}" class="btn btn-success mb-3">Eliminar</a>
+                    <a href="{{ route('alumne_delete', ['id' => $alumne->id]) }}" class="btn btn-success mb-3">Eliminar</a>
 
-            </td>
+                </td>
         </tr>
         @endforeach
     </tbody>
