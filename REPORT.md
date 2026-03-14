@@ -4,7 +4,11 @@
 
 Nom del projecte: gestio-insti-daw
 
+<<<<<<< HEAD
+Integrants: Souhaila Ezzarfi , Ricard Vergés 
+=======
 Integrants: Souhaila Ezzarfi , Ricard
+>>>>>>> origin/main
 
 Tecnologia principal (Laravel / React / Fullstack): Laravel
 
@@ -95,12 +99,24 @@ Mostreu el fragment amb:
 Expliqueu:
 
 - Quina decisió s’ha pres
+```
+Vam decidit revisar manualment el fitxer REPORT.md i mantenir el contingut correcte eliminant els marcadors de conflicte generats per Git (<<<<<<<, =======, >>>>>>>). En el cas del conflicte, es va conservar el contingut que ja formava part de la documentació del projecte i es van integrar els canvis que no entraven en conflicte.
+```
 - Per què s’ha escollit aquesta opció
+```
+S’ha escollit aquesta opció perquè Git no podia fusionar automàticament els canvis en el fitxer, ja que les dues branques havien modificat la mateixa part del document. Per evitar perdre informació, s’ha revisat manualment el contingut i s’ha decidit quina versió mantenir.
+```
 - Com s’ha validat que funciona
+```
+Hem escollit aquesta opció perquè Git no podia fusionar automàticament els canvis en el fitxer, ja que les dues branques havien modificat la mateixa part del document. Per evitar perdre informació, s’ha revisat manualment el contingut i s’ha decidit quina versió mantenir.
+```
 
 ### 4.5 Reflexió
 
 Què heu après d’aquest conflicte?
+```
+En aquest conflicte hem après com Git gestiona els canvis quan dues branques modifiquen el mateix fitxer. També hem entès el significat dels marcadors de conflicte i com revisar manualment el contingut per decidir quina versió mantenir. Finalment, hem practicat el procés complet de resolució de conflictes i la seva validació abans de fer el merge.
+```
 
 ## 5. Conflicte 2 – Dependències o estructura
 
@@ -286,8 +302,19 @@ Expliqueu els passos exactes que hauria de seguir una persona externa:
 - Accedir a l’aplicació
 
 Indiqueu també:
+<<<<<<< HEAD
+- Ports utilitzats 
+```
+Els ports principals utilitzats per l’aplicació són:
+
+8000 → servidor web de l’aplicació (Laravel / Nginx)
+
+3306 → base de dades MySQL (si s’exposa externament)
+```
+=======
 
 - Ports utilitzats
+>>>>>>> origin/main
 - Credencials de prova (si n’hi ha)
 
 Una persona externa pot executar el projecte seguint aquests passos:
@@ -337,15 +364,40 @@ Descriviu què ha fet cada membre de l’equip.
 ## 9. Temps invertit
 
 Indiqueu aproximadament:
+<<<<<<< HEAD
+- Temps dedicat a Git: aproximadament entre unes 5 i 6 hores.
+- Temps dedicat a Docker:
+- Temps dedicat a documentació: 
+=======
 
 - Temps dedicat a Git
 - Temps dedicat a Docker
 - Temps dedicat a documentació
+>>>>>>> origin/main
 
 ## 10. Reflexió final
 
 Responeu breument:
 
 - Quina ha estat la part més complexa?
+```
+Git, perquè a mi (Ricard), no hem sortia el mateix que a la companya Souhaila, i ens va tenir més temps entretinguts que tot anés bé, i la meva branca de treball estigués bé.
+```
 - Què faríeu diferent en un projecte real?
+<<<<<<< HEAD
+```
+En un projecte real, el grup aplicaria una planificació encara més estricta des del principi. Tot i que en aquest projecte s’han utilitzat branques, merges i resolució de conflictes, s’ha vist que moltes incidències apareixen quan no es coordinen prou bé els canvis que fa cada membre.
+```
 - Heu entès realment com funcionen els conflictes i Docker?
+```
+Pel que fa als conflictes de Git, hem aprés, i considerem que sí que s’ha entès el seu funcionament de manera pràctica. Abans de fer aquest projecte, els conflictes es veien com un error difícil d’interpretar, però després de provocar-los i resoldre’ls manualment s’ha entès millor per què es produeixen, com identificar els marcadors de conflicte i com decidir quina versió del codi s’ha de mantenir.
+
+Especialment, s’ha après que Git no “s’equivoca”, sinó que simplement no pot decidir automàticament quan dues branques modifiquen la mateixa part d’un fitxer o quan hi ha canvis incompatibles en fitxers com composer.json. Aquesta part ha estat útil perquè s’ha treballat sobre casos reals del projecte.
+
+Pel que fa a Docker, el grup també considera que s’ha entès millor la seva utilitat dins del desplegament d’una aplicació. En aquest cas, la part principal de dockerització ha estat treballada sobretot per una de les integrants del grup, però el procés global ha servit per entendre millor com es defineixen els serveis, com es configuren els contenidors i com es pot executar el projecte d’una manera més reproduïble en diferents equips.
+
+Per tant, la conclusió del grup és que sí, hem assolit una comprensió més real, tant dels conflictes de Git com del paper a fer Docker en un projecte professional, tot i que encara hi ha marge de millora i més pràctica per consolidar alguns conceptes més.
+```
+=======
+- Heu entès realment com funcionen els conflictes i Docker?
+>>>>>>> origin/main
