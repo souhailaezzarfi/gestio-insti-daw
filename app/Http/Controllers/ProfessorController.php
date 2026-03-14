@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Professor;
+use Illuminate\Support\Facades\File;
+
 
 
 class ProfessorController extends Controller
@@ -33,9 +35,6 @@ function ordenarProfessor (Request $request){
     function new(Request $request) 
     { 
 
-     if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
       if ($request->isMethod('post')) {    
         // recollim els camps del formulari en un objecte professor
 
@@ -68,9 +67,7 @@ function ordenarProfessor (Request $request){
     }
         function edit ($id, Request $request){
 
-         if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
+       
       if ($request->isMethod('post')) {    
         
 
@@ -126,9 +123,7 @@ function ordenarProfessor (Request $request){
     function delete($id) 
     { 
 
-     if (auth()->user()->rol !== 'admin') {
-       abort(403); 
-       }
+    
       $professor = Professor::find($id);
       $professor->delete();
 

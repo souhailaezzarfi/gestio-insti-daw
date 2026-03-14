@@ -44,9 +44,7 @@ class ModulController extends Controller
     public function new(Request $request)
 {
 
- if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
+
     // Si venimos del formulario (POST)
     if ($request->isMethod('post')) {
 
@@ -76,9 +74,7 @@ class ModulController extends Controller
 }
 function edit ($id, Request $request){
 
- if (auth()->user()->rol !== 'admin' && auth()->user()->rol !== 'professor') {
-       abort(403); 
-       }
+ 
       if ($request->isMethod('post')) {    
         
 
@@ -110,9 +106,7 @@ function edit ($id, Request $request){
     function delete($id) 
     { 
 
-     if (auth()->user()->rol !== 'admin') {
-       abort(403); 
-       }
+   
       $modul = Modul::find($id);
       $modul->delete();
 

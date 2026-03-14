@@ -14,7 +14,6 @@
         <div class="container">
            
             @yield('content')
-            @auth<a href="{{ route('dashboard') }}" class="btn btn-secondary mb-3">Tornar</a>@endauth
 
         </div>
     </body>
